@@ -1,0 +1,1130 @@
+/* =======================================
+   GENERAL
+======================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: white;
+  color: black;
+  overflow-x: hidden;
+  font-family: "semplicitapro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =======================================
+   NAVIGATION
+======================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2002;
+  background: white;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 220px;
+  margin-bottom: 5px;
+}
+
+.nav-link {
+  letter-spacing: 0.5px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  color: black;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #F569BF !important;
+  text-decoration: underline;
+}
+
+.navbar-nav .nav-link.active,
+.navbar .nav-link.active {
+  color: #F569BF !important;
+  text-decoration: underline;
+}
+
+/* Burger button */
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  background: transparent;
+  box-shadow: none !important;
+  z-index: 2003;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000000' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F569BF' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-collapse {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.87);
+  transition: 0.4s ease;
+  padding-top: 120px;
+  text-align: center;
+  z-index: 2001;
+}
+
+.navbar-collapse.show {
+  right: 0;
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  color: white !important;
+  margin-bottom: 25px;
+  margin-right: 40px;
+  text-align: right;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #F569BF !important;
+  text-decoration: underline;
+}
+
+
+/* Desktop navbar */
+@media (min-width: 991px) {
+  .navbar-collapse {
+    position: static;
+    height: auto;
+    background: transparent;
+    padding-top: 0;
+  }
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    color: black !important;
+    margin-right: 0;
+    text-align: left;
+  }
+}
+
+/* Mobile navbar padding */
+@media (max-width: 767px) {
+  .nav-container {
+    padding: 15px 20px;
+}
+  
+}
+
+/* =======================================
+   HERO HOMEPAGE
+======================================= */
+
+.hero-home {
+  width: 100%;
+  padding: 140px 40px 60px;
+}
+
+/* MAIN HERO LAYOUT */
+
+.hero-image-wrapper {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+/* IMAGE */
+
+.hero-main-image {
+  width: auto;
+
+  max-width: calc(100vw - 320px);
+
+  max-height: calc(100vh - 220px);
+
+  object-fit: contain;
+
+  display: block;
+  margin-bottom: 20px;
+}
+
+
+/* =======================================
+   TABLET
+======================================= */
+
+@media (max-width: 1100px) {
+
+  .hero-main-image {
+    max-width: calc(100vw - 220px);
+  }
+
+  .hero-caption-label {
+    font-size: 16px;
+  }
+
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media (max-width: 768px) {
+
+  .hero-home {
+    padding: 120px 20px 40px;
+  }
+
+  .hero-image-wrapper {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+  }
+
+  .hero-main-image {
+    width: 100%;
+
+    max-width: 100%;
+
+    max-height: none;
+  }
+
+  .hero-caption {
+    width: 100%;
+
+    padding-bottom: 0;
+
+    text-align: center;
+  }
+
+  .hero-caption-label {
+    font-size: 14px;
+  }
+
+}
+
+/* =======================================
+   HEADER
+======================================= */
+.header-section {
+  padding: 200px 40px 80px;
+  text-align: left;
+}
+
+.header-section-center {
+  display: flex;              /* enable flex */
+  flex-direction: column;     /* stack children vertically */
+  justify-content: center;    /* center vertically */
+  align-items: center;        /* center horizontally */
+  padding: 200px 40px 40px;   /* keep your original spacing */
+  text-align: center;         /* ensures text inside is centered */
+}
+
+.header-section-center h1 {
+  font-size: 80px;
+  font-weight: 500;
+  line-height: 1;
+  padding-bottom: 16px;
+}
+
+.header-section-p {
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;      /* text inside paragraph centered */
+  max-width: 900px;       /* limit width */
+  margin: 0 auto;          /* center the block horizontally */
+  padding-top: 16px;
+  font-weight: 400;
+}
+
+/* =======================================
+   About
+======================================= */
+
+
+/* Container for the about section */
+.about {
+  display: flex;                    /* enable flexbox */
+  justify-content: center;          /* center horizontally */
+  gap: 40px;                        /* space between columns */
+  flex-wrap: wrap;                  /* wrap if screen is too small */
+  padding-bottom: 40px;               /* optional spacing around */
+}
+
+/* Each column containing the image */
+.about > div {
+  display: flex;                    /* enable flex for child div */
+  justify-content: center;          /* center the inner image */
+  align-items: center;              /* vertical center */
+}
+
+
+/* =======================================
+   ABOUT SECTION — MOBILE
+======================================= */
+@media (max-width: 768px) {
+
+  /* Header Section */
+  .header-section-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: flex-start; /* align children to left */
+    padding: 150px 20px 20px;
+    text-align: left;        /* text alignment defaults to left */
+  }
+
+  .header-section-center h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .header-section-p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;       /* keeps paragraphs left-aligned */
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 0;
+    
+  }
+
+  /* About Images */
+  .about {
+    display: flex;
+    flex-direction: column; /* stack images vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 40px;             /* spacing between images */
+    padding: 0 20px;
+    padding-bottom: 40px;
+  }
+
+  .about > div {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* center the image in column */
+  }
+
+}
+
+/* =======================================
+   Contacts
+======================================= */
+
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 200px 40px 100px;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+/* Form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "helvetica", sans-serif;
+  resize: none;
+}
+
+.contact-form input {
+  height: 48px;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form button {
+  width: 140px;
+  height: 48px;
+  background-color: #F568C0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .contact-section h1 {
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    max-width: 140px;
+  }
+}
+
+
+/* =======================================
+   FOOTER
+======================================= */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 13px;
+  background: white;
+}
+
+.social-links a {
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  opacity: 0.5;
+}
+
+/* =======================================
+   MOBILE RESPONSIVE
+======================================= */
+@media (max-width: 768px) {
+  /* Headers */
+  .header-section { padding: 150px 20px 40px; text-align: left; }
+  .header-section h1 { font-size: 60px;}
+  .header-section-2 { padding: 100px 20px 40px; text-align: left; }
+  .header-section-2 h2 { font-size: 48px; }
+
+}
+
+
+/* =======================================
+   WORK PAGE LAYOUT
+======================================= */
+
+.work-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+
+  padding: 160px 40px 80px;
+}
+
+/* =======================================
+   SIDEBAR
+======================================= */
+
+.work-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+
+  position: sticky;
+  top: 120px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+/* =======================================
+   CATEGORY BUTTONS
+======================================= */
+
+.category-btn {
+  border: none;
+  background: transparent;
+
+  text-align: left;
+
+  padding-bottom: 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: black;
+
+  border-radius: 2px;
+
+  transition: 0.25s ease;
+
+  cursor: pointer;
+}
+
+.category-btn:hover {
+  background: white;
+  color: #F569BF;
+}
+
+.category-btn.active {
+  background: white;
+  color: #F569BF;
+}
+
+/* =======================================
+   CATEGORY GROUPE
+======================================= */
+
+.projects-group {
+  margin-bottom: 10px;
+}
+
+.projects-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.projects-submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.projects-submenu.open {
+  display: flex;
+}
+
+.projects-toggle .plus {
+  transition: transform 0.3s ease;
+}
+
+.projects-toggle.open .plus {
+  transform: rotate(45deg); /* + becomes × */
+}
+
+/* =======================================
+   CONTENT
+======================================= */
+
+.work-content {
+  flex: 1;
+}
+
+.work-section {
+  display: none;
+}
+
+.work-section.active-section {
+  display: block;
+}
+
+
+
+/* =======================================
+   ART GRID
+======================================= */
+
+.art-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.art-item {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.art-item img {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+.art-item:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =======================================
+   LIGHTBOX
+======================================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  background: rgba(245,245,245,0.97);
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+/* =======================================
+   LIGHTBOX WRAPPER
+======================================= */
+
+.lightbox-wrapper {
+  width: 100%;
+  max-width: 1280px;
+
+  display: grid;
+  grid-template-columns: 1fr 420px;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+/* =======================================
+   GALLERY ONLY MODE
+======================================= */
+
+.lightbox.gallery-only .lightbox-wrapper {
+  grid-template-columns: 1fr;
+}
+
+.lightbox.gallery-only .lightbox-info {
+  display: none;
+}
+
+.lightbox.gallery-only .lightbox-image-area {
+  justify-content: center;
+}
+
+/* =======================================
+   IMAGE AREA
+======================================= */
+
+.lightbox-image-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 88vh;
+
+  object-fit: contain;
+
+  transition: opacity 0.2s ease;
+}
+
+/* =======================================
+   INFO PANEL
+======================================= */
+
+.lightbox-info {
+  max-width: 420px;
+
+  display: flex;
+  flex-direction: column;
+
+  color: black;
+}
+
+.lightbox-title {
+  font-size: 28px;
+  line-height: 1.1;
+
+  text-transform: uppercase;
+  font-weight: 600;
+
+  margin-bottom: 28px;
+}
+
+.lightbox-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 28px;
+}
+
+.lightbox-size {
+  font-size: 12px;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  opacity: 0.6;
+}
+
+.lightbox-status {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lightbox-status.available {
+  color: #F569BF;
+}
+
+.lightbox-desc {
+  font-size: 14px;
+  line-height: 1.8;
+
+  opacity: 0.82;
+
+  margin-bottom: 40px;
+}
+
+/* =======================================
+   BUTTON
+======================================= */
+
+.lightbox-button {
+  width: fit-content;
+
+  padding: 14px 22px;
+
+  background: #F569BF;
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 4px;
+
+  transition: 0.25s ease;
+}
+
+.lightbox-button:hover {
+  opacity: 0.85;
+  color: white;
+}
+
+/* =======================================
+   CLOSE
+======================================= */
+
+.close {
+  position: absolute;
+
+  top: 30px;
+  right: 40px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 46px;
+
+  color: black;
+
+  cursor: pointer;
+
+  z-index: 10000;
+}
+
+/* =======================================
+   ARROWS
+======================================= */
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+
+  font-size: 50px;
+
+  color: rgba(0,0,0,0.45);
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  z-index: 10000;
+}
+
+.lightbox-arrow:hover {
+  color: #F569BF;
+}
+
+.prev {
+  left: 25px;
+}
+
+.next {
+  right: 25px;
+}
+
+/* =======================================
+   CENTRE
+======================================= */
+
+.lightbox.center-mode .lightbox-wrapper {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.lightbox.center-mode .lightbox-info {
+  display: none !important;
+}
+
+.lightbox.center-mode .lightbox-image-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =======================================
+   TABLET (768px – 1100px)
+======================================= */
+
+@media (max-width: 1100px) {
+
+  /* ================= HERO ================= */
+  .hero-home {
+    padding: 120px 30px 50px;
+  }
+
+  .hero-image-wrapper {
+    gap: 15px;
+    align-items: center;
+  }
+
+  .hero-main-image {
+    max-width: calc(100vw - 200px);
+    max-height: 70vh;
+  }
+
+  /* ================= HEADER ================= */
+  .header-section {
+    padding: 160px 30px 60px;
+  }
+
+  .header-section-center {
+    padding: 160px 30px 40px;
+  }
+
+  .header-section-center h1 {
+    font-size: 64px;
+  }
+
+  .header-section-p {
+    font-size: 14px;
+    max-width: 700px;
+  }
+
+  /* ================= ABOUT ================= */
+  .about {
+    gap: 25px;
+    padding: 0 30px 40px;
+  }
+
+  /* ================= CONTACT ================= */
+  .contact-section {
+    padding: 160px 30px 80px;
+  }
+
+  .contact-form {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  /* ================= WORK LAYOUT ================= */
+  .work-layout {
+    padding: 140px 30px 70px;
+    gap: 25px;
+  }
+
+  .work-sidebar {
+    width: 200px;
+  }
+
+  .category-btn {
+    font-size: 12px;
+  }
+
+  /* GRID becomes more breathable */
+  .art-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  /* ================= LIGHTBOX ================= */
+  .lightbox-wrapper {
+    grid-template-columns: 1fr 340px;
+    gap: 50px;
+  }
+
+  .lightbox-title {
+    font-size: 24px;
+  }
+
+  .lightbox-img {
+    max-height: 75vh;
+  }
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media (max-width: 768px) {
+
+
+  .art-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+
+  .lightbox {
+    padding: 15px;
+    align-items: flex-start; /* important: allows scroll */
+  }
+
+  .lightbox-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  /* IMAGE AREA */
+  .lightbox-image-area {
+    width: 100%;
+  }
+
+  .lightbox-img {
+    width: 100%;
+    height: auto;
+    max-height: 50vh; /* prevents pushing content off screen */
+    object-fit: contain;
+  }
+
+  /* INFO BELOW IMAGE */
+  .lightbox-info {
+    max-width: 100%;
+    padding: 10px 0 40px;
+  }
+
+  .lightbox-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .lightbox-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* make sure page can scroll inside lightbox */
+  .lightbox {
+    overflow-y: auto;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .close {
+    top: 15px;
+    right: 20px;
+  }
+
+  .work-layout {
+    flex-direction: column;
+  }
+
+  .work-sidebar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .work-content {
+    width: 100%;
+  }
+
+  .projects-submenu.open {
+  display: flex;
+  
+  }
+
+  .projects-submenu {
+    display: none;
+  }
+
+  .projects-submenu.open {
+    display: flex;
+  }
+
+    .lightbox.gallery-only {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox.gallery-only .lightbox-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .lightbox.gallery-only .lightbox-image-area {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox.gallery-only .lightbox-img {
+    max-width: 95vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+  }
+
+
+}
+
+
+/* =======================================
+   PROJECT IMAGE WRAPPER (BASE)
+======================================= */
+
+.project-image-wrapper {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+
+  width: 70%;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+/* Image */
+.project-image-wrapper img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 60vw;
+  max-height: 60vh;
+
+  object-fit: contain;
+}
+
+@media (max-width: 1100px) {
+
+  .project-image-wrapper {
+    min-height: auto;
+  }
+
+  .project-image-wrapper img {
+    max-width: 60vw;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .project-image-wrapper {
+    flex-direction: column;
+    min-height: auto;
+
+  }
+
+  .project-image-wrapper img {
+  width: auto;
+  height: auto;
+  max-width: 100vw;
+  max-height: 60vh;
+  }
+}
