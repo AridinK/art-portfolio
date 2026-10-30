@@ -524,3 +524,88 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+/* =========================
+ Work page ID url
+========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const sections = document.querySelectorAll(".work-section");
+
+  const projectsToggle = document.getElementById("projectsToggle");
+  const projectsMenu = document.getElementById("projectsMenu");
+
+  function showSection(sectionId) {
+
+    const targetSection = document.getElementById(sectionId);
+
+    if (!targetSection || !targetSection.classList.contains("work-section")) {
+      return;
+    }
+
+    // Hide all sections
+    sections.forEach(section => {
+      section.classList.remove("active-section");
+    });
+
+    // Remove active state from buttons
+    categoryButtons.forEach(button => {
+      button.classList.remove("active");
+    });
+
+    // Show selected section
+    targetSection.classList.add("active-section");
+
+    // Highlight selected button
+    const activeButton = Array.from(categoryButtons).find(
+      button => button.dataset.target === sectionId
+    );
+
+    if (activeButton) {
+      activeButton.classList.add("active");
+
+      // Open Projects submenu when a project is selected
+      if (activeButton.closest(".projects-submenu")) {
+        projectsMenu?.classList.add("active");
+        projectsToggle?.classList.add("active");
+      }
+    }
+  }
+
+  // Handle category clicks
+  categoryButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+      const sectionId = this.dataset.target;
+
+      showSection(sectionId);
+
+      // Update URL without reloading the page
+      history.pushState(null, "", "#" + sectionId);
+
+    });
+
+  });
+
+  // Open project from URL when page loads
+  const initialSection = window.location.hash.substring(1);
+
+  showSection(initialSection || "current");
+
+  // Handle browser Back / Forward navigation
+  window.addEventListener("popstate", function () {
+
+    const sectionId = window.location.hash.substring(1);
+
+    showSection(sectionId || "current");
+
+  });
+
+});
+
+
+
