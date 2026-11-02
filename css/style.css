@@ -1962,7 +1962,7 @@ font-size: 18px !important;
 
     padding:15px 38px;
 
-    background:#111;
+    background:#F569BF;
     color:#fff;
 
     text-decoration:none;
@@ -2098,6 +2098,7 @@ font-size: 18px !important;
     .discover-cta{
         width:100%;
         max-width:320px;
+        margin-bottom: 10px;
     }
 
     .discover-links a{
